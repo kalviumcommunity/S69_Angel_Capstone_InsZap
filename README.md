@@ -22,7 +22,7 @@ Web + PWA Approach: Accessible on any device with offline functionality and push
 ### Home Page:
 Overview of the platform’s features.
 Search bar to find nearby charging stations.
-Option to view charging stations on a map.
+Option to view charging stations on a map .
 
 ### Search & Results Page:
 Filter by charger type, price, and availability.
