@@ -104,3 +104,4 @@ Day 23: Test deployment and fix deployment-specific issues.
 Day 24: Test one last time and submit the project.
 
 
+## Frontend Deployed link : https://inszappp.netlify.app/
