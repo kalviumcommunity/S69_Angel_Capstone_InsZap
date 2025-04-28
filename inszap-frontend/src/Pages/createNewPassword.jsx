@@ -1,25 +1,40 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from "../assets/Logo.png"; 
-import './forgotpassword.css';
+import './createNewPassword.css';
 
-const ForgotPassword = () => {
+const CreateNewPassword = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
+  const [form, setForm] = useState({
+    password: '',
+    confirmPassword: '',
+  });
 
   const handleChange = (e) => {
-    setEmail(e.target.value);
+    const { name, value } = e.target;
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email) {
-      alert('Please enter your email address.');
+
+    // Basic validation
+    if (!form.password || !form.confirmPassword) {
+      alert('Please fill all fields.');
       return;
     }
-    // Simulate sending a reset link (replace with actual API call)
-    console.log('Sending password reset link to:', email);
-    alert('Password reset link sent! Check your email.'); // In a real app, this would be handled by the backend
+    if (form.password !== form.confirmPassword) {
+      alert('Passwords do not match.');
+      return;
+    }
+
+    // Simulate password reset (replace with actual API call)
+    console.log('Password reset successful:', form);
+    alert('Password reset successful! Please log in.');
+    navigate('/login'); // Redirect to login page
   };
 
   const handleBackToLogin = () => {
@@ -42,17 +57,29 @@ const ForgotPassword = () => {
 
       {/* Right Panel */}
       <div className="right-panel bg-[#1C2B32] p-12 flex flex-col justify-center">
-        <h2 className="text-2xl font-semibold mb-6">Forgot Password?</h2>
+        <h2 className="text-2xl font-semibold mb-6">Create New Password</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label>Email Address :</label>
+            <label>Enter Password :</label>
             <input
-              type="email"
-              name="email"
-              value={email}
+              type="password"
+              name="password"
+              value={form.password}
               onChange={handleChange}
               className="w-full mt-1 p-2 rounded bg-[#294045] text-white"
-              placeholder="Enter your email address"
+              placeholder="Enter new password"
+              required
+            />
+          </div>
+          <div>
+            <label>Confirm Password :</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              value={form.confirmPassword}
+              onChange={handleChange}
+              className="w-full mt-1 p-2 rounded bg-[#294045] text-white"
+              placeholder="Confirm your password"
               required
             />
           </div>
@@ -60,7 +87,7 @@ const ForgotPassword = () => {
             type="submit"
             className="bg-[#032030] px-6 py-2 rounded text-white font-medium hover:bg-[#053344]"
           >
-            Send Reset Link
+            Create New Password
           </button>
           <p className="text-sm mt-2">
             <span onClick={handleBackToLogin} className="underline cursor-pointer">
@@ -73,4 +100,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default CreateNewPassword;

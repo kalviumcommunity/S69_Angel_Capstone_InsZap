@@ -21,11 +21,20 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form); // Replace with actual API logic
+    console.log('Form submitted:', form);
+
+    // Basic validation
+    if (!form.email && !form.phone || !form.password) {
+      alert('Please fill all fields.');
+      return;
+    }
+
+    // Simulate successful login (replace with actual API call)
+    console.log('Login successful, redirecting to user profile');
+    navigate('/userProfilePage1'); // Redirect to user profile page
   };
 
   const handleForgotPassword = () => {
-    console.log('Redirecting to Forgot Password page');
     navigate('/forgotpassword');
   };
 
