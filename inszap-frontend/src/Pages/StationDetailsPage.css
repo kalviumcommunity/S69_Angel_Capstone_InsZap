@@ -1,0 +1,132 @@
+.station-details-page {
+    display: flex;
+    min-height: 100vh;
+    background-color: #0b1620;
+    color: white;
+  }
+  
+  .left-section {
+    width: 50%;
+    background-color: #10445a;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .logo {
+    width: 120px;
+    margin-bottom: 30px;
+  }
+  
+  .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .tagline {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .right-section {
+    width: 50%;
+    background-color: #1C2B32;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .station-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .station-card {
+    background-color: #2a3b42;
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .station-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  .station-info {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .charger-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+  }
+  
+  .charger-item {
+    margin-bottom: 8px;
+  }
+  
+  .availability-badge {
+    margin-top: 8px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: inline-block;
+  }
+  
+  .available {
+    background-color: #34c759; /* Green */
+  }
+  
+  .not-available {
+    background-color: #ff3b30; /* Red */
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+  }
+  
+  .action-button {
+    flex: 1;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .reserve-button:disabled {
+    background-color: #7baeed;
+    cursor: not-allowed;
+  }
+  
+  .action-button:hover {
+    background-color: #357ABD;
+  }
+  
