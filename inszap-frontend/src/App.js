@@ -15,7 +15,7 @@ import PaymentsPage from "./Pages/PaymentsPage";
 function App() {
   return (
     <Router>
-      <Routes>
+      <Routes> // Frontend components added
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login/>}/>
