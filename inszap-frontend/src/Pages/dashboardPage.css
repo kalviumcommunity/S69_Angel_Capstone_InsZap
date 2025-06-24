@@ -1,0 +1,44 @@
+.station-card {
+    background-color: #2a3b42;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .station-card:hover {
+    background-color: #3a4b52; /* Slightly lighter on hover */
+    transition: background-color 0.3s ease;
+  }
+  
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  
+  .station-info p {
+    margin: 0.5rem 0;
+  }
+  
+  .navigate-btn {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .back-btn {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .user-info p {
+    margin: 0.5rem 0;
+  }

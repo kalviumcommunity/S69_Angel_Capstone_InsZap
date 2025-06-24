@@ -1,17 +1,19 @@
 const express = require('express');
-const connectDB = require('./config/db');
+const mongoose = require('mongoose');
 const cors = require('cors');
-
-require('dotenv').config();
-connectDB();
+const userRoutes = require('./Routes/userRoutes');
 
 const app = express();
-app.use(cors());
 app.use(express.json());
+app.use(cors({ origin: 'http://localhost:3000' }));
 
-app.get('/', (req, res) => {
-  res.send('Welcome to InsZap Backend');
+// Connect to MongoDB without deprecated options
+mongoose.connect('mongodb://localhost:27017/inszap').then(() => {
+  console.log('Connected to MongoDB successfully');
+}).catch((error) => {
+  console.error('MongoDB connection error:', error.message);
 });
+
 
 const userroutes = require('./Routes/userRoutes'); 
 
@@ -23,3 +25,9 @@ const stationRoutes = require('./Routes/stationRoutes');
 
 app.use('/api/users', userroutes);
 app.use('/api/stations', stationRoutes);
+
+app.use('/api/users', userRoutes);
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
