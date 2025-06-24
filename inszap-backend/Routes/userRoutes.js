@@ -23,4 +23,16 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+//POST API USED
+// Add new user
+router.post('/', async (req, res) => {
+  try {
+    const newUser = new User(req.body);
+    await newUser.save();
+    res.status(201).json(newUser);
+  } catch (error) {
+    res.status(400).json({ error: 'Error saving user to database' });
+  }
+});
+
 module.exports = router;
