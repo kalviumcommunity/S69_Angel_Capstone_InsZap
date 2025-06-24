@@ -14,7 +14,20 @@ mongoose.connect('mongodb://localhost:27017/inszap').then(() => {
   console.error('MongoDB connection error:', error.message);
 });
 
+
+const userroutes = require('./Routes/userRoutes'); 
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port 'http://localhost:${PORT}'`));
+
+const userRoutes = require('./Routes/userRoutes');
+const stationRoutes = require('./Routes/stationRoutes');
+
+app.use('/api/users', userroutes);
+app.use('/api/stations', stationRoutes);
+
 app.use('/api/users', userRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
