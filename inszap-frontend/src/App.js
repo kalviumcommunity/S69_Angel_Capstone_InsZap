@@ -5,6 +5,8 @@ import Signup from "./components/signup";
 import Login from "./components/login";
 import ForgotPassword from "./components/forgotpassword";
 
+// initialised react
+
 function App() {
   return (
     <Router>
