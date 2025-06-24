@@ -12,6 +12,8 @@ import DashboardPage from "./Pages/dashboardPage";
 import StationDetailsPage from "./Pages/StationDetailsPage";
 import PaymentsPage from "./Pages/PaymentsPage";
 
+// initialised react
+
 function App() {
   return (
     <Router>
